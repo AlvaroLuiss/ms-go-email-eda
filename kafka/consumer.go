@@ -29,6 +29,7 @@ func StartConsumer() {
 	groupID := getEnv("KAFKA_GROUP_ID", "go-event-consumer-group")
 
 	// Consumer para user.registered
+	// Usando goroutine para rodar em paralelo
 	go consumeUserRegistered(broker, groupID)
 
 	// Consumer para user.login
